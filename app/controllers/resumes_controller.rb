@@ -16,7 +16,7 @@ class ResumesController < ApplicationController
       flash[:notice] = "成功提交履历"
       redirect_to job_path(@job)
     else
-      redner :new
+      render :new
     end
   end
 
