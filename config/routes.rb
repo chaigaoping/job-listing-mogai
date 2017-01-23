@@ -9,7 +9,9 @@ Rails.application.routes.draw do
          post :publish
          post :hide
        end
+      resources :resumes
      end
+
    end
    root "jobs#index"
 end

@@ -18,5 +18,5 @@ class Job < ApplicationRecord
     self.save
   end
 
-  has_many :resuems
+  has_many :resumes
 end
