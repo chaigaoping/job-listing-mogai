@@ -56,12 +56,32 @@ class JobsController < ApplicationController
     @job.destroy
     redirect_to jobs_path
   end
+  def category
+    @jobs = case params[:order]
+    when 'by_architecture'
+      Job.published.where(:category => "architecture")
+    when 'by_arts'
+      Job.published.where(:category => "arts")
+    when 'by_business'
+      Job.published.where(:category => "business")
+    when 'by_community_service'
+      Job.published.where(:category => "community service")
+    when 'by_education'
+      Job.published.where(:category => "education")
+    when 'by_healthcare_support'
+      Job.published.where(:category => "healthcare suooprt")
+    when 'by_food_service'
+      Job.published.where(:category => "food service")
+    when 'by_developer'
+      Job.published.where(:category => "developer")
+    end
+  end
 
 
 
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :wage_lower_bound, :wage_upper_bound, :contact_email, :is_hidden)
+    params.require(:job).permit(:title, :description, :wage_lower_bound, :wage_upper_bound, :contact_email, :is_hidden, :category, :city)
   end
 end

@@ -21,13 +21,16 @@
 @import "font-awesome";
 
 .jumbotron {
+  border: 1px solid red;
   background-image:url('11.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  padding-bottom: 50px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .title {
+  border: 1px solid red;
   font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
   text-align: center;
   margin-top: 200px;
@@ -36,6 +39,7 @@
 }
 
 .slogan {
+  border: 1px solid red;
   margin-top: 10px;
   margin-bottom: 50px;
   text-align: center;
@@ -44,7 +48,26 @@
 }
 
 .lead {
-  margin-bottom: 60px;
+  border: 1px solid red;
+  margin-bottom: 50px;
   text-align: center;
   color: white;
+}
+.navbar-default {
+    background-color: #564b3f;
+    border-color: #E7E7E7;
+    color: white !important;
+}
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
+
+.aboutus {
+    background-color: #846c5b;
+    margin-bottom: 0px;
+    margin-top: -25px;
 }
