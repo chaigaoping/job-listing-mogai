@@ -1,0 +1,17 @@
+<div class="pull-right">
+  <%= link_to(content_tag(:i, " Check All Jobs", class: "fa fa-reply-all"), jobs_path) %> |
+  <%= link_to(content_tag(:i, " Back", class: "fa fa-arrow-left"), url_for(:back)) %>
+</div>
+
+<% if @jobs.blank?%>
+<br>
+<div>
+  Opps! No any results matched, please try again.
+</div>
+    <% else %>
+      <h3>Total find <%= @jobs.count %> jobs</h3>
+      <%= render "category" %>
+      <div class="text-center">
+        <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+      </div>
+    <% end %>

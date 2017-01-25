@@ -4,6 +4,7 @@ Rails.application.routes.draw do
    resources :jobs do
      collection do
        get :category
+       get :search
      end
      resources :resumes
    end

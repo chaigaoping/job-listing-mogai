@@ -78,9 +78,28 @@ class JobsController < ApplicationController
     end
   end
 
+  def search
+   if @query_string.present?
+     search_result = Job.ransack(@search_criteria).result(:distinct => true)
+     @jobs = search_result.recent.paginate(:page => params[:page], :per_page => 5 )
+   end
+ end
 
 
-  private
+ protected
+
+  def validate_search_key
+    @query_string = params[:q].gsub(/\\|\'|\/|\?/, "")
+    if params[:q].present?
+      @search_criteria =  {
+        title_or_company_or_city_cont: @query_string
+      }
+    end
+  end
+
+
+
+   private
 
   def job_params
     params.require(:job).permit(:title, :description, :wage_lower_bound, :wage_upper_bound, :contact_email, :is_hidden, :category, :city)

@@ -1,45 +1,49 @@
 <div class="jumbotron">
-  <h1 class="title">New Job</h1>
+  <h1 class="title">Career Builder</h1>
   <p class="slogan">
-  find  new job and start living the life  imagined.
+  Find the right job. Right now.
   </p>
   <P class="lead">
     <a class="btn btn-lg btn-danger" href="/jobs">start now</a>
   </P>
 </div>
-<div class="aboutus">
-  <h2 class="text-center">About Us</h2>
-  <div>
-    <p>
-      这是一块要放上我们的介绍，主要是个招聘网站。另外要介绍我们自己的优势和特点
-    </p>
-  </div>
-</div>
+
 <div class="category">
-  <ul>
-    <li >
-      <%= link_to("architecture",category_jobs_path(:order => "by_architecture")) %>
-    </li>
-    <li>
-      <%= link_to("arts", category_jobs_path(:order => "by_arts")) %>
-    </li>
-    <li>
-      <%= link_to("business", category_jobs_path(:order => "by_business")) %>
-    </li>
-    <li>
-      <%= link_to("community service", category_jobs_path(:order => "by_community_service")) %>
-    </li>
-    <li>
-      <%= link_to("education", category_jobs_path(:order => "by_education")) %>
-    </li>
-    <li>
-      <%= link_to("healthcare support", category_jobs_path(:order => "by_healthcare_support")) %>
-    </li>
-    <li>
-      <%= link_to("food service", category_jobs_path(:order => "by_food_service")) %>
-    </li>
-    <li>
-      <%= link_to("developer", category_jobs_path(:order => "by_developer")) %>
-    </li>
-  </ul>
+  <h2 class="text-center">CATEGORY</h2>
+  <div class="row">
+    <div class="col-md-3 col-sm-6">
+    <%= link_to("architecture",category_jobs_path(:order => "by_architecture")) %>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+    <%= link_to("arts", category_jobs_path(:order => "by_arts")) %>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+    <%= link_to("business", category_jobs_path(:order => "by_business")) %>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+    <%= link_to("community service", category_jobs_path(:order => "by_community_service")) %>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-3 col-sm-6">
+     <%= link_to("developer", category_jobs_path(:order => "by_developer")) %>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+    <%= link_to("food service", category_jobs_path(:order => "by_food_service")) %>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+    <%= link_to("healthcare support", category_jobs_path(:order => "by_healthcare_support")) %>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+        <%= link_to("education", category_jobs_path(:order => "by_education")) %>
+    </div>
+  </div>
 </div>

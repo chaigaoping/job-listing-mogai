@@ -23,45 +23,38 @@
 
 body {
   background: #edeae6;
-}
-
-body {
-  background: url("https://source.unsplash.com/MAxHEAaAukI");
-  background-repeat: no-repeat;
-  background-size: cover;
-  
+  margin-bottom: 50px;
+  position: relative;
 }
 
 .jumbotron {
-  border: 1px solid red;
   background-image:url('11.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 0px;
   margin-bottom: 0px;
+  height: 500px;
 }
 
 .title {
-  border: 1px solid red;
   font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
   text-align: center;
-  margin-top: 200px;
-  margin-bottom: 80px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   color: white !important;
 }
 
 .slogan {
-  border: 1px solid red;
   margin-top: 10px;
   margin-bottom: 50px;
   text-align: center;
   color: white;
   top: 12px;
+  font-weight: 300;
 }
 
 .lead {
-  border: 1px solid red;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
   text-align: center;
   color: white;
 }
@@ -78,15 +71,69 @@ body {
     color: #fff;
 }
 
-.aboutus {
-    background-color: #846c5b;
-    margin-bottom: 0px;
-    margin-top: -25px;
-}
-
 .category-page {
     margin-top: 60px;
+    margin-bottom: 20px;
     padding: 20px;
     background-color: white;
     box-shadow: 2px 2px 2px #c4c2be;
+}
+
+.search-bar {
+    margin-top: 8px;
+    max-width: 300px;
+}
+
+div ul.pagination {
+  bottom: 20;
+}
+
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #564b3f;
+  text-align: center;
+  .container {
+    margin-top: 20px;
+    color: #fff;
+    width: 100%;
+  }
+}
+
+.category {
+  margin-top: 50px;
+
+}
+
+.col-md-3 {
+  background-color: #c9bda0;
+
+  text-align: center;
+  margin: 45px;
+  width: 300px;
+  height: 50px;
+  padding-top: 10px;
+  transition: 2s;
+  font-size: 20px;
+  a {
+    color: black !important;
+    z-index: 1000;
+  }
+
+}
+
+.col-md-3:hover {
+  background-color: #896030;
+  border-radius: 10px;
+}
+.col-md-3 a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.category .row {
+  margin-left: 20px;
 }
