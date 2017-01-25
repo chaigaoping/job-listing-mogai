@@ -20,6 +20,18 @@
 @import "bootstrap";
 @import "font-awesome";
 
+
+body {
+  background: #edeae6;
+}
+
+body {
+  background: url("https://source.unsplash.com/MAxHEAaAukI");
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
 .jumbotron {
   border: 1px solid red;
   background-image:url('11.jpg');
@@ -70,4 +82,11 @@
     background-color: #846c5b;
     margin-bottom: 0px;
     margin-top: -25px;
+}
+
+.category-page {
+    margin-top: 60px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 2px 2px 2px #c4c2be;
 }

@@ -1,0 +1,38 @@
+<div class="category-page col-md-10 col-md-offset-1">
+  <table class="table table-hover text-center">
+   <thead>
+     <tr>
+       <td>Category</td>
+       <td>Title</td>
+       <td>City</td>
+       <td>Lower Bound</td>
+       <td>Upper Bound</td>
+       <td>Posted Time</td>
+     </tr>
+   </thead>
+   <tbody>
+     <% @jobs.each do |job| %>
+     <tr>
+       <td>
+         <%= job.category %>
+       </td>
+       <td>
+         <%= link_to(job.title, job_path(job)) %>
+       </td>
+       <td><%= job.city %></td>
+       <td>
+         <%= job.wage_lower_bound %>
+       </td>
+       <td>
+         <%= job.wage_upper_bound %>
+       </td>
+       <td>
+         <%= local_time_ago(job.created_at) %>
+       </td>
+     </tr>
+     <% end %>
+   </tbody>
+
+  </table>
+
+</div>

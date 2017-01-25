@@ -13,13 +13,16 @@
       <%= render "common/flashes" %>
       <div class="row">
         <div class="col-md-2" >
-          <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top: 20px;" >
-            <li class="active">
+          <ul class="nav nav-pills nav-stacked" style="max-width: 100px; padding-top: 100px;" >
+            <li class="active text-center">
               <%= link_to("Jobs", admin_jobs_path) %>
+            </li>
+            <li class="active text-center">
+              <%= link_to("Add a Job", new_admin_job_path) %>
             </li>
           </ul>
         </div>
-        <div class="col-md-10">
+        <div>
           <%= yield %>
         </div>
       </div>

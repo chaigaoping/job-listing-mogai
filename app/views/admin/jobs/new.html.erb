@@ -1,14 +1,16 @@
-<h1>Add a job</h1>
+<div class="category-page col-md-4 col-md-offset-2">
+<h3 class="text-center">Add a Job</h3>
 
 <%= simple_form_for [:admin, @job] do |f| %>
   <%= f.input :title %>
   <%= f.input :description %>
-  <%= f.input :wage_upper_bound, :label => "薪资上限" %>
-  <%= f.input :wage_lower_bound, :label => "薪资下限" %>
+  <%= f.input :wage_upper_bound, :label => "Upper Bound" %>
+  <%= f.input :wage_lower_bound, :label => "Lower Bound" %>
   <%= f.input :category %>
   <%= f.input :city %>
   <%= f.input :contact_email %>
   <%= f.input :is_hidden %>
 
-  <%= f.submit "Submit" %>
+  <%= f.submit "Submit", class: "btn btn-primary" %>
 <% end %>
+</div>

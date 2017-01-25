@@ -1,18 +1,14 @@
-<div class="pull-right">
-  <%= link_to("Add a job", new_admin_job_path, :class => "btn btn-default") %>
-</div>
+<div class="category-page col-md-10 col-md-offset-1">
 
-<br /><br />
-
-<table class="table table-boldered">
+<table class="table table-boldered text-center">
   <thead>
     <tr>
-      <td>职缺</td>
-      <td>收到履历数</td>
-      <td>薪资下限</td>
-      <td>薪资上限</td>
-      <td>管理选项</td>
-      <td>刊登时间</td>
+      <td>Title</td>
+      <td>Resumes</td>
+      <td>Lower Bound</td>
+      <td>Upper Bound</td>
+      <td>Posted Time</td>
+      <td>Manage Job</td>
     </tr>
   </thead>
   <tbody>
@@ -26,19 +22,22 @@
       <td><%= job.wage_lower_bound %></td>
       <td><%= job.wage_upper_bound %></td>
       <td>
-         <%= link_to edit_admin_job_path(job)  do %><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i><% end %>
-         <%= link_to admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" } do %><i class="fa fa-trash-o fa-2x"></i><% end %>
-
-        <% if job.is_hidden %>
-        <%= link_to publish_admin_job_path(job) , :method => :post  do %><i class="fa fa-eye fa-2x"></i><% end %>
-        <% else %>
-           <%= link_to hide_admin_job_path(job), :method => :post do %><i class="fa fa-eye-slash fa-2x"></i><% end %>
-        <% end %>
+        <%= local_time_ago(job.created_at) %>
       </td>
       <td>
-        <%= job.created_at %>
+        <%= link_to("Edit", edit_admin_job_path(job)) %>
+        |<%= link_to("Delete", admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+        |<% if job.is_hidden %>
+        <%= link_to("Public", publish_admin_job_path(job), :method => :post) %>
+        <% else %>
+        <%= link_to("Hide", hide_admin_job_path(job), :method => :post) %>
+        <% end %>
       </td>
     </tr>
   </tbody>
   <% end %>
 </table>
+</div>
+<div class="text-center">
+<%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+</div>
